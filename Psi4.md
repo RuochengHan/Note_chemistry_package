@@ -11,5 +11,8 @@ set opt_coordinated both
 ```bash
 set opt_coordinated cartesian
 ```
-
+4. Geom not converge after amny iters:
+```bash
+set full_hess_every 1
+```
 
