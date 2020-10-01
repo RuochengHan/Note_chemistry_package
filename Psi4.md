@@ -16,3 +16,10 @@ set opt_coordinated cartesian
 set full_hess_every 1
 ```
 
+SCF
+1. Check the geometry
+
+2. Use second-order SCF convergence methods:
+```bash
+set soscf true
+```
