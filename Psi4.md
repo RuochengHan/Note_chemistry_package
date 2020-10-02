@@ -11,9 +11,9 @@ set opt_coordinated both
 ```bash
 set opt_coordinated cartesian
 ```
-4. Geom not converge after many iters, calculate full Hessain matrix every step:
+4. Geom not converge after many iters, calculate full Hessain matrix every n step:
 ```bash
-set full_hess_every 1
+set full_hess_every n
 ```
 
 SCF
