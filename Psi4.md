@@ -13,6 +13,7 @@ set opt_coordinated cartesian
 ```
 4. Geom not converge after many iters, calculate full Hessain matrix every n step:
 ```bash
+set step_type nr
 set full_hess_every n
 ```
 
