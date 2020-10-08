@@ -11,7 +11,7 @@ set opt_coordinated both
 ```bash
 set opt_coordinated cartesian
 ```
-4. Geom not converge after many iters, calculate full Hessain matrix every n step:
+4. Geom not converge after many iters, use other method for gradient or calculate full Hessain matrix every n step:
 ```bash
 set step_type nr
 set full_hess_every n
@@ -26,7 +26,8 @@ set soscf true
 ```
 
 ## Others
-Psi4 1.4 always use RIJK approximation by default, use the usual one:
+1. Psi4 1.4 always use RIJK approximation by default, use the usual one:
 ```bash
 set scf_type direct
 ```
+2. Even you set the above variable, still it will use some intermediate step with RI.
