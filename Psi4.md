@@ -1,4 +1,4 @@
-# Geom Opt
+## Geom Opt
 1. More opt iterations than 30:
 ```bash
 set geom_maxiter 200
@@ -17,10 +17,16 @@ set step_type nr
 set full_hess_every n
 ```
 
-SCF
+## SCF
 1. Check the geometry
 
 2. Use second-order SCF convergence methods:
 ```bash
 set soscf true
+```
+
+## Others
+Psi4 1.4 always use RIJK approximation by default, use the usual one:
+```bash
+set scf_type direct
 ```
