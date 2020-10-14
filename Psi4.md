@@ -31,3 +31,6 @@ set soscf true
 set scf_type direct
 ```
 2. Even you set the above variable, still it will use some intermediate step with RI.
+3. For MP2 RI (density fitting) is ok, but for CCSD, the printed out orbital/FCIDUMP/Amplitudes cannot be used to reproduce the correlation
+energy. You need to set it to direct or pk. However for triple bond systems like C2H2, even with direct or pk, the printed out infos cannot 
+reproduce the results. In this case, you need to use PYSCF. 
