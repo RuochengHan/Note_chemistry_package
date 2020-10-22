@@ -25,6 +25,12 @@ set full_hess_every n
 set soscf true
 ```
 
+## Post-HF
+1. "RuntimeError: Fatal Error: PSIO Error" in CCSD(T) calculation of larger systems and basis set, usually means disk for scratch is full:
+```bash
+export PSI_SCRATCH=/scratch/$USER/psi4/
+```
+
 ## Others
 1. Psi4 1.4 always use RIJK approximation by default, use the usual one:
 ```bash
