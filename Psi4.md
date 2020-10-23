@@ -12,7 +12,7 @@ set opt_coordinated both
 set opt_coordinated cartesian
 ```
 4. Geom not converge after many iters, use other method for gradient or calculate full Hessain matrix every n step:
-```bash
+```python
 set step_type nr
 set full_hess_every n
 ```
@@ -21,7 +21,7 @@ set full_hess_every n
 1. Check the geometry
 
 2. Use second-order SCF convergence methods:
-```bash
+```python
 set soscf true
 ```
 
@@ -30,10 +30,21 @@ set soscf true
 ```bash
 export PSI_SCRATCH=/scratch/$USER/psi4/
 ```
+2. for DF(RI)-CC calculation, need settings like below:
+```python
+set {
+  basis cc-pvdz
+  df_basis_scf cc-pvdz-jkfit
+  df_basis_cc cc-pvdz-ri
+  scf_type df
+  #freeze_core true
+  cc_type df
+```
+
 
 ## Others
 1. Psi4 1.4 always use RIJK approximation by default, use the usual one:
-```bash
+```python
 set scf_type direct
 ```
 2. Even you set the above variable, still it will use some intermediate step with RI.
