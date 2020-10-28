@@ -2,5 +2,5 @@
 Then use openbabel need to convert to `.xyz` and back to `.sdf` to let it be correct:
 ```bash
 obabel -isdf input.sdf -oxyz -O input.xyz
-obabel -ixyz input.xyz -osdf -O input.sdf
+obabel -ixyz input.xyz -osdf -O output.sdf
 ```
