@@ -1,0 +1,4 @@
+1. Install with toolchain:
+```bash
+git clone https://github.com/cp2k/cp2k.git
+```
