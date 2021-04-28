@@ -5,11 +5,11 @@ set geom_maxiter 200
 ```
 2. When geom convergence fails, molecule has long 'arms':
 ```bash
-set opt_coordinated both
+set opt_coordinates both
 ```
 3. Error 'Unable to compute torsion value':
 ```bash
-set opt_coordinated cartesian
+set opt_coordinates cartesian
 ```
 4. Geom not converge after many iters, use other method for gradient or calculate full Hessain matrix every n step:
 ```bash
