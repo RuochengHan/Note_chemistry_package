@@ -10,3 +10,5 @@ cd ../../
 git submodule update --init --recursive # get dbcsr
 make -j 8 ARCH=local VERSION="ssmp psmp"
 ```
+
+2. all electron calculation needs GAPW, since the core electron makes larger gradients on potential. For peudopotential, GPW is fine.
