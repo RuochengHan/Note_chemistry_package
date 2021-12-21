@@ -4,3 +4,7 @@
 
 # SCF
 1. scf=(fermi,conver=6,maxcycle=128)
+
+
+# ECP
+1. Chinese: http://sobereva.com/60
