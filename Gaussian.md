@@ -8,3 +8,24 @@
 
 # ECP
 1. Chinese: http://sobereva.com/60
+```bash
+%mem=10gb
+%nprocshared=4
+
+#p B3LYP/genecp
+
+NaH
+
+0 1
+Na 0. 0. 0.
+H  0. 0. 0.
+
+Na 0
+Lanl2DZ
+****
+H 0
+6-31G**
+****
+Na 0
+Lanl2
+```
