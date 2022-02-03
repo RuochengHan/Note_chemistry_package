@@ -29,3 +29,8 @@ H 0
 Na 0
 Lanl2
 ```
+
+# Vibrational resolved electronic spectrum
+1. http://sobereva.com/223
+2. http://bbs.keinsci.com/thread-774-1-1.html
+
