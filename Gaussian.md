@@ -34,3 +34,9 @@ Lanl2
 1. http://sobereva.com/223
 2. http://bbs.keinsci.com/thread-774-1-1.html
 
+# chekcpoints file
+move between machines
+```bash
+chkmove f file_name.chk file_name.xfr
+chkmove u file_name.xfr file_name.chk
+```
