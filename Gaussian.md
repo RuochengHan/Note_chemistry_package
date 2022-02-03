@@ -37,6 +37,9 @@ Lanl2
 # chekcpoints file
 move between machines
 ```bash
-chkmove f file_name.chk file_name.xfr
-chkmove u file_name.xfr file_name.chk
+formchk file_name.chk file_name.fchk
+unfchk file_name.fchk file_name.chk
+
+chkmove f file_name.chk file_name.xfr # G03
+chkmove u file_name.xfr file_name.chk # G03
 ```
