@@ -12,3 +12,5 @@ make -j 8 ARCH=local VERSION="ssmp psmp"
 ```
 
 2. all electron calculation needs GAPW, since the core electron makes larger gradients on potential. For peudopotential, GPW is fine.
+
+3. in cp2py, if basis set is modified, do not change the name of the basis.
