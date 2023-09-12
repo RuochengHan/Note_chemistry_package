@@ -13,12 +13,11 @@ tar zxvf bin-linux-8.10.5.tar.gz
 mv bin-linux bin
 ```
 
-## Change example.cfg
-Change Tinker path
 Download parameter set from https://dasher.wustl.edu/tinker/
 ```bash
 mkdir params
 cd params
 wget https://dasher.wustl.edu/tinker/distribution/params/mmff.prm
-```
 
+## Change example.cfg
+Change Tinker path
