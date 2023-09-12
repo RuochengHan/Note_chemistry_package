@@ -15,3 +15,10 @@ mv bin-linux bin
 
 ## Change example.cfg
 Change Tinker path
+Download parameter set from https://dasher.wustl.edu/tinker/
+```bash
+mkdir params
+cd params
+wget https://dasher.wustl.edu/tinker/distribution/params/mmff.prm
+```
+
