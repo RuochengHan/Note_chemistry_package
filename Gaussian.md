@@ -5,6 +5,11 @@
 # SCF
 1. scf=(fermi,conver=6,maxcycle=128)
 
+# OPT
+1. not converge:
+```bash
+Opt=(maxcycles=50, calcall)
+```
 
 # ECP
 1. Chinese: http://sobereva.com/60
