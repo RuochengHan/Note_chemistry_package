@@ -1,4 +1,4 @@
-# Funtional
+# Functional
 
 ## excited states
 1. Must use hybrid functional, PBE0 or B3LYP is ok. See http://sobereva.com/265
