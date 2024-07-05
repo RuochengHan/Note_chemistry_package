@@ -6,4 +6,7 @@
 ## GS geometry or energy
 1. If pure functional, better BLYP-D3BJ or B97-3c. See http://bbs.keinsci.com/thread-23482-1-1.html
 
-Other related info: http://sobereva.com/272, http://sobereva.com/557
+Other related info: 
+1. http://sobereva.com/272
+2. http://sobereva.com/557
+3. http://sobereva.com/706
