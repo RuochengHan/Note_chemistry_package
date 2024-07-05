@@ -10,3 +10,9 @@ Other related info:
 1. http://sobereva.com/272
 2. http://sobereva.com/557
 3. http://sobereva.com/706
+
+# Basis set
+
+Other related info:
+1. http://sobereva.com/119
+2. http://sobereva.com/336
