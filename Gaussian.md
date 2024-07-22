@@ -4,6 +4,11 @@
 
 # SCF
 1. scf=(fermi,conver=6,maxcycle=128)
+2. when use diffuse function, Gaussian automatically reduces the integration grid at the beginning of the calculation: \\
+   SCF=NoVarAcc to stop reducing and int=acc2e=12 to increase integration accuracy.
+
+Ref.:
+https://wongzit.github.io/method-to-solve-the-scf-not-converged/
 
 # OPT
 1. not converge:
