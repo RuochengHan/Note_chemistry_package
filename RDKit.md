@@ -6,3 +6,16 @@ obabel -ixyz input.xyz -osdf -O output.sdf
 ```
 
 2. When using c++ rdkit on MacOS, one need to use ```bash brew install```, and at the same time modify the ` .rb ` file to turn on the static lib.
+
+3. Remove atoms: 
+```bash
+# Given removed atom ids
+remove_ids.sort(reverse=True)
+edit_mol = Chem.EditableMol(mol)
+
+for idx in remove_ids:
+edit_mol.RemoveAtom(idx)
+
+new_mol = edit_mol.GetMol()
+Chem.SanitizeMol(new_mol)
+```
