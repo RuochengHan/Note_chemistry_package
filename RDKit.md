@@ -19,3 +19,11 @@ for idx in remove_ids:
 new_mol = edit_mol.GetMol()
 Chem.SanitizeMol(new_mol)
 ```
+
+4. Remove atoms that with mapping: (Ref. https://sourceforge.net/p/rdkit/mailman/message/36699970/)
+```bash
+# very important! Mapped smiles always has extra H associate with C
+# Allow implicit, otherwise after remove atom, it will generate radicals
+for atom in mol.GetAtoms():
+    atom.SetNoImplicit(False)
+```
