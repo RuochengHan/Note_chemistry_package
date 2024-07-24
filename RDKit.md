@@ -26,4 +26,6 @@ Chem.SanitizeMol(new_mol)
 # Allow implicit, otherwise after remove atom, it will generate radicals
 for atom in mol.GetAtoms():
     atom.SetNoImplicit(False)
+
+# Then remove atoms...
 ```
