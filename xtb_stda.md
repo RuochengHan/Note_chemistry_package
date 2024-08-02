@@ -16,3 +16,13 @@ For xtb
 ```bash
 stda -xtb -e 10
 ```
+For gaussian
+```bash
+stda -f ../molden.input -ax 0.2 -e 10 -sty 3 > output # 0.2 is Hartree--Fock exchange factor
+```
+
+note that stda output need to add UV (or substitute VOLE). ANd need to correct Fortran number
+```bash
+# Add E to 1.1234-104 -> 1.1234E-104
+sed -i -E "s/([0-9])\-([0-9])/\1E\-\2/g" $1
+```
