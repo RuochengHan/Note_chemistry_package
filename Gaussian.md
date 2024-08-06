@@ -16,6 +16,12 @@ https://wongzit.github.io/method-to-solve-the-scf-not-converged/
 Opt=(maxcycles=50, calcall)
 ```
 
+# TS
+```bash
+opt=(qst3,redundant) freq=noraman Temperature=373.15 SCRF=(Solvent=Water)
+```
+Ref. https://joaquinbarroso.com/2013/11/27/qst2-qst3/
+
 # ECP
 1. Chinese: http://sobereva.com/60
 ```bash
@@ -98,6 +104,7 @@ unfchk file_name.fchk file_name.chk
 chkmove f file_name.chk file_name.xfr # G03
 chkmove u file_name.xfr file_name.chk # G03
 ```
+
 
 # Examples of duifferent types of calculations
 https://hpc.chem.wisc.edu/software/kestrel-software/gaussian/
