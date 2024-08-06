@@ -98,3 +98,9 @@ unfchk file_name.fchk file_name.chk
 chkmove f file_name.chk file_name.xfr # G03
 chkmove u file_name.xfr file_name.chk # G03
 ```
+
+# Examples:
+https://hpc.chem.wisc.edu/software/kestrel-software/gaussian/
+
+# with xtb
+http://sobereva.com/421
