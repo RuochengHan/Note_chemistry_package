@@ -99,8 +99,10 @@ chkmove f file_name.chk file_name.xfr # G03
 chkmove u file_name.xfr file_name.chk # G03
 ```
 
-# Examples:
+# Examples of duifferent types of calculations
 https://hpc.chem.wisc.edu/software/kestrel-software/gaussian/
 
 # with xtb
 http://sobereva.com/421
+
+http://sobereva.com/soft/gau_xtb/
