@@ -28,4 +28,6 @@ for atom in mol.GetAtoms():
     atom.SetNoImplicit(False)
 
 # Then remove atoms...
+
+5. Some structure gives overlap of atoms by UFF, so try MMFF first. e.g. EmbedMultipleConfs + UFF for [N+](=O)([O-])c1c(cc(c(c1)OC)OC)N (EmbedMolecule + UFF/MMFF and EmbedMultipleConfs + MMFF is fine)
 ```
