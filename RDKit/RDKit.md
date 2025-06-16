@@ -33,3 +33,12 @@ for atom in mol.GetAtoms():
 5. Some structure gives overlap of atoms by UFF, so try MMFF first. e.g. EmbedMultipleConfs + UFF for [N+](=O)([O-])c1c(cc(c(c1)OC)OC)N (EmbedMolecule + UFF/MMFF and EmbedMultipleConfs + MMFF is fine)
 
 6. In EmbedMultipleConfs, useBasicKnowledge=True can not embed endocycle molecule, use useBasicKnowledge=False
+
+7. When removing atom formal charge, need to reset ExplicitHs, otherwise cause Sanitize error, e.g. Explicit valence for atom # ... is greater than permitted
+```python
+for atom in mol.GetAtoms():
+    if atom.GetFormalCharge() != 0:
+        atom.SetFormalCharge(0)
+        # otherwise cause Sanitize error
+        atom.SetNumExplicitHs(0)
+```
