@@ -42,3 +42,9 @@ for atom in mol.GetAtoms():
         # otherwise cause Sanitize error
         atom.SetNumExplicitHs(0)
 ```
+
+8. when loading sdf with given Hs:
+```
+# otherwise Hs are removed
+suppl = Chem.SDMolSupplier(finp, removeHs=False)
+```
