@@ -1,3 +1,10 @@
+## Compile install
+```bash
+conda install -y cmake cairo pillow eigen pkg-config
+conda install -y boost-cpp boost
+
+```
+
 1. Sometimes from `.sdf` file, number of bonds not correct (like C have 5).
 Then use openbabel need to convert to `.xyz` and back to `.sdf` to let it be correct:
 ```bash
