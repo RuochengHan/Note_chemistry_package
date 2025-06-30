@@ -51,7 +51,21 @@ for atom in mol.GetAtoms():
 ```
 
 8. when loading sdf with given Hs:
-```
+```python
 # otherwise Hs are removed
 suppl = Chem.SDMolSupplier(finp, removeHs=False)
+```
+
+9. After copy a mol, remember to sanitize it.
+```python
+mol = Chem.Mol(prod_mol)
+Chem.SanitizeMol(mol)
+# Or the following
+# mol.updatePropertyCache(); it just calculates valence states of the atoms. There are no topology changes.
+# https://github.com/rdkit/rdkit/issues/1596
+#mol.UpdatePropertyCache()
+```
+Otherwise will have error
+```bash
+Pre-condition Violation getNumImplicitHs() called without preceding call to calcImplicitValence()
 ```
