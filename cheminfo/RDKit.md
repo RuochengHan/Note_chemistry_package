@@ -69,3 +69,40 @@ Otherwise will have error
 ```bash
 Pre-condition Violation getNumImplicitHs() called without preceding call to calcImplicitValence()
 ```
+
+10. In the case of several colors on the image, Draw.MolToImage not work (seems highlightAtomColors highlightAtomColors no logner supported), need to use rdMolDraw2D.PrepareAndDrawMolecule
+```python
+# Use the MolDraw2DSVG drawer
+drawer = rdMolDraw2D.MolDraw2DSVG(350, 350)
+
+# The highlight colors are provided directly to the drawer
+drawer.drawOptions().highlightBondColors = {
+    0: (0, 0, 1),    # Blue
+    1: (0, 0.5, 0)   # Green
+}
+
+bondcolors = {
+    0: (0, 0, 1),    # Blue
+    1: (0, 0.5, 0)   # Green
+}
+
+rdMolDraw2D.PrepareAndDrawMolecule(drawer, mol, 
+                                   highlightBonds=[0,1],
+                                   highlightBondColors=bondcolors)
+
+#drawer.DrawMolecule(mol, highlightBonds=[0, 1])
+drawer.FinishDrawing()
+
+# Get the image as SVG text and save it
+svg = drawer.GetDrawingText()
+with open('test_alternative_drawing.svg', 'w') as f:
+    f.write(svg)
+
+# 3. Get the SVG data as a string
+svg_data = drawer.GetDrawingText()
+
+# 4. Convert the SVG string to a PNG file
+cairosvg.svg2png(bytestring=svg_data.encode('utf-8'), write_to="molecule_drawing.png")
+
+print("Image successfully saved as 'molecule_drawing.png'")
+```
