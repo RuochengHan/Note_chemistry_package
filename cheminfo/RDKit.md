@@ -142,12 +142,10 @@ print("Image successfully saved as 'molecule_drawing.png'")
     drawer = rdMolDraw2D.MolDraw2DSVG(600, 600)
     # Enable atom indices display
     opts = drawer.drawOptions()
-    #opts.addAtomIndices = True
-    #opts.atomLabels = atomLabels
+    #opts.addAtomIndices = True # for all indices
 
     opts.annotationFontScale = 0.75
-    #opts.noatomLabels
-    #opts.minFontSize = 48
+    #opts.minFontSize = 48 # not work
     drawer.SetFontSize(20)
     #print(drawer.FontSize())
 
@@ -158,7 +156,7 @@ print("Image successfully saved as 'molecule_drawing.png'")
         highlightBonds=list(highlight_bonds),
         highlightAtomColors=atom_colors,
         highlightBondColors=bond_colors
-        #atomLabels=atomLabels
+        #atomLabels=atomLabels # not work
     )
     drawer.FinishDrawing()
     svg = drawer.GetDrawingText()
