@@ -106,3 +106,60 @@ cairosvg.svg2png(bytestring=svg_data.encode('utf-8'), write_to="molecule_drawing
 
 print("Image successfully saved as 'molecule_drawing.png'")
 ```
+
+11. SetProp('atomNote',str(idx)) for indices in rdMolDraw2D
+```python
+    # Find atoms in highlighted bonds
+    highlight_bond_atoms = set()
+
+    for typ, atoms, v, dE in unstables:
+        if dE > e_thres:
+            if typ == "Torsion" and len(atoms) == 4:
+                for a1, a2 in zip(atoms[:3], atoms[1:4]):
+                    bond = mol.GetBondBetweenAtoms(a1, a2)
+                    if bond:
+                        highlight_bonds.add(bond.GetIdx())
+                        bond_colors[bond.GetIdx()] = (0, 1, 1)
+                        highlight_bond_atoms.add(a1)
+                        highlight_bond_atoms.add(a2)
+            elif typ in ("ES", "VdW"):
+                for idx in atoms:
+                    highlight_atoms.add(idx)
+                    atom_colors[idx] = (1, 0.5, 0)
+
+    # Union of all atoms to label
+    atoms_to_label = highlight_atoms | highlight_bond_atoms
+
+    # Prepare atomLabels dictionary
+    #atomLabels = {idx: str(idx) for idx in atoms_to_label}
+    #atomLabels = {0: 'Si'}
+
+
+    [mol.GetAtomWithIdx(idx).SetProp('atomNote',str(idx)) for idx in atoms_to_label]
+
+
+    # Create SVG drawer
+    drawer = rdMolDraw2D.MolDraw2DSVG(600, 600)
+    # Enable atom indices display
+    opts = drawer.drawOptions()
+    #opts.addAtomIndices = True
+    #opts.atomLabels = atomLabels
+
+    opts.annotationFontScale = 0.75
+    #opts.noatomLabels
+    #opts.minFontSize = 48
+    drawer.SetFontSize(20)
+    #print(drawer.FontSize())
+
+    rdMolDraw2D.PrepareAndDrawMolecule(
+        drawer, 
+        mol, 
+        highlightAtoms=list(highlight_atoms),
+        highlightBonds=list(highlight_bonds),
+        highlightAtomColors=atom_colors,
+        highlightBondColors=bond_colors
+        #atomLabels=atomLabels
+    )
+    drawer.FinishDrawing()
+    svg = drawer.GetDrawingText()
+```
