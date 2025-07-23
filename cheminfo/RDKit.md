@@ -161,3 +161,26 @@ print("Image successfully saved as 'molecule_drawing.png'")
     drawer.FinishDrawing()
     svg = drawer.GetDrawingText()
 ```
+
+12. Match the substructure coordinates, to show molecule in the same direction.
+```python
+for atom in mol.GetAtoms():
+    atom.SetIntProp("template_idx", atom.GetIdx())
+
+template = Chem.Mol(mol)
+print(f"Template SMILES: {Chem.MolToSmiles(template)}")
+
+# E.g. Some modification of mol
+mol = Chem.ReplaceSubstructs(mol, original, replacement, replaceAll=True)[0]
+
+# Get atom map for aligning mol in 2d
+atom_map = []
+for atom in mol.GetAtoms():
+    if atom.HasProp("template_idx"):
+        template_idx = atom.GetIntProp("template_idx")
+        atom_map.append((template_idx, atom.GetIdx()))
+
+print(f"Atom Map: {atom_map}")
+
+AllChem.GenerateDepictionMatching2DStructure(mol, template, atomMap=atom_map)
+```
